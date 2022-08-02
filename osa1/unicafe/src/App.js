@@ -14,13 +14,22 @@ const Statistics = ({good, neutral, bad, total, average, positivePercentage}) =>
   if (total > 0) {
     return (
       <div>
-        <StatisticsLine name="good" value={good} />
-        <StatisticsLine name="neutral" value={neutral} />
-        <StatisticsLine name="good" value={bad} />
-        <StatisticsLine name="total" value={total} />
-        <StatisticsLine name="average" value={average} />
-        <StatisticsLine name="positive" value={positivePercentage} />
-
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <StatisticsLine name="good" value={good} />
+            <StatisticsLine name="neutral" value={neutral} />
+            <StatisticsLine name="good" value={bad} />
+            <StatisticsLine name="total" value={total} />
+            <StatisticsLine name="average" value={average} />
+            <StatisticsLine name="positive" value={positivePercentage} />
+          </tbody>
+        </table>
       </div>
     )
   }
@@ -32,9 +41,10 @@ const Statistics = ({good, neutral, bad, total, average, positivePercentage}) =>
 
 const StatisticsLine = ({name, value}) => {
   return (
-    <div>
-      {name}: {value}
-    </div>
+    <tr>
+          <td>{name}</td> 
+          <td>{value}</td>
+        </tr>
   )
 }
 
